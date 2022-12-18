@@ -14,7 +14,13 @@ $$ K = {\left\lbrack \matrix{f & 0 & px \cr 0 & f & py \cr 0 & 0 & 1} \right\rbr
 
 where f is the focal length, px and py are the coordinates of the principal point, and 1 is the scaling factor. Once we have calculated the intrinsic matrix, we can then calculate the extrinsic matrix, R and t, which describe the orientation and position of the camera in the world coordinate system. The extrinsic matrix is calculated as follows:
 
+$$ R = {\left\lbrack \matrix{r11 & r12 & r13 \cr r21 & r22 & r23 \cr r31 & r32 & r33} \right\rbrack} $$
+$$ t = {\left\lbrack \matrix{tx \cr ty \cr tz} \right\rbrack} $$
+
+
 The intrinsic matrix has three main components, the focal length, the principal point, and the skew. The focal length determines the field of view and the magnification of the image. The principal point is the center of the image, and the skew describes any distortion in the x and y axes. To decompose the camera matrix into intrinsic and extrinsic matrices, we first need to add one column on the right to change its shape to 34 then calculate the intrinsic matrix, K.
+
+$$ P = {\left\lbrack \matrix{f & 0 & px \cr 0 & f & py \cr 0 & 0 & 1} \right\rbrack} {\left\lbrack \matrix{1 & 0 & 0 & 0 \cr 0 & 1 & 0 & 0 \cr 0 & 0 & 1 & 0 \cr 0 & 0 & 0 & 0 } \right\rbrack} $$
 
 Also can be written as:
 P = K[I|o]]
