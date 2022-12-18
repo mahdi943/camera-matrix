@@ -10,7 +10,7 @@ First, we need to define the world coordinates of 3D points using checkerboard p
 The camera matrix, also known as the intrinsic matrix, is a 3x3 matrix that describes the intrinsic properties of a camera. It maps 3D points in the world to 2D points on the image plane. The intrinsic matrix is typically denoted as K.
 
 
-$$ {\left\lbrack \matrix{f & 0 & px \cr 0 & f & py \cr 0 & 0 & 1} \right\rbrack} $$
+$$ K = {\left\lbrack \matrix{f & 0 & px \cr 0 & f & py \cr 0 & 0 & 1} \right\rbrack} $$
 
 where f is the focal length, px and py are the coordinates of the principal point, and 1 is the scaling factor. Once we have calculated the intrinsic matrix, we can then calculate the extrinsic matrix, R and t, which describe the orientation and position of the camera in the world coordinate system. The extrinsic matrix is calculated as follows:
 
